@@ -1,0 +1,106 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___________________________ test_split_code_no_crash ___________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 17, in test_split_code_no_crash
+  |     @example(None)
+  |                    
+  |   File "/home/agent/.local/lib/python3.12/site-packages/hypothesis/core.py", line 1730, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 20, in test_split_code_no_crash
+    |     result = split_code(value)
+    |              ^^^^^^^^^^^^^^^^^
+    |   File "/tmp/tmpqzmud7fw/coupon_validator.py", line 2, in split_code
+    |     prefix, value = code.strip().upper().split('-')
+    |                     ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'strip'
+    | Failing explicit example: test_split_code_no_crash(
+    |     value=None,
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 20, in test_split_code_no_crash
+    |     result = split_code(value)
+    |              ^^^^^^^^^^^^^^^^^
+    |   File "/tmp/tmpqzmud7fw/coupon_validator.py", line 2, in split_code
+    |     prefix, value = code.strip().upper().split('-')
+    |     ^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing explicit example: test_split_code_no_crash(
+    |     value='',
+    | )
+    +------------------------------------
+_________________________ test_most_expensive_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 26, in test_most_expensive_no_crash
+  |     @example(None)
+  |                    
+  |   File "/home/agent/.local/lib/python3.12/site-packages/hypothesis/core.py", line 1730, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 29, in test_most_expensive_no_crash
+    |     result = most_expensive(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^
+    |   File "/tmp/tmpqzmud7fw/coupon_validator.py", line 6, in most_expensive
+    |     prices = [float(p) for p in prices_csv.split(',')]
+    |                                 ^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing explicit example: test_most_expensive_no_crash(
+    |     value=None,
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 29, in test_most_expensive_no_crash
+    |     result = most_expensive(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^
+    |   File "/tmp/tmpqzmud7fw/coupon_validator.py", line 6, in most_expensive
+    |     prices = [float(p) for p in prices_csv.split(',')]
+    |               ^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | Failing explicit example: test_most_expensive_no_crash(
+    |     value='',
+    | )
+    +------------------------------------
+__________________________ test_expiry_days_no_crash ___________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 34, in test_expiry_days_no_crash
+  |     @example(None)
+  |                    
+  |   File "/home/agent/.local/lib/python3.12/site-packages/hypothesis/core.py", line 1730, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 2 distinct failures in explicit examples. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 37, in test_expiry_days_no_crash
+    |     result = expiry_days(value)
+    |              ^^^^^^^^^^^^^^^^^^
+    |   File "/tmp/tmpqzmud7fw/coupon_validator.py", line 10, in expiry_days
+    |     year, month, day = [int(p) for p in date_text.split('-')]
+    |                                         ^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing explicit example: test_expiry_days_no_crash(
+    |     value=None,
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/tmp/tmpqzmud7fw/test_coupon_validator.py", line 37, in test_expiry_days_no_crash
+    |     result = expiry_days(value)
+    |              ^^^^^^^^^^^^^^^^^^
+    |   File "/tmp/tmpqzmud7fw/coupon_validator.py", line 10, in expiry_days
+    |     year, month, day = [int(p) for p in date_text.split('-')]
+    |                         ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing explicit example: test_expiry_days_no_crash(
+    |     value='',
+    | )
+    +------------------------------------
+=========================== short test summary info ============================
+FAILED test_coupon_validator.py::test_split_code_no_crash - ExceptionGroup: H...
+FAILED test_coupon_validator.py::test_most_expensive_no_crash - ExceptionGrou...
+FAILED test_coupon_validator.py::test_expiry_days_no_crash - ExceptionGroup: ...
+3 failed, 67 deselected in 2.16s

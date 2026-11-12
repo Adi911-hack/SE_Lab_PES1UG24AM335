@@ -1,0 +1,8 @@
+==== Running split_code ====
+Enter a coupon code (e.g. save-20): Prefix and Value: ('SAVE', 20)
+
+==== Running most_expensive ====
+Enter item prices as CSV (e.g. 199,49.5,320): Most Expensive Item: 320.0
+
+==== Running expiry_days ====
+Enter an expiry date as YYYY-MM-DD: Days Since 2024: 61

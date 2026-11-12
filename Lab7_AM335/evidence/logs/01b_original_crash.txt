@@ -1,0 +1,11 @@
+==== Running split_code ====
+Enter a coupon code (e.g. save-20): Traceback (most recent call last):
+  File "/tmp/tmpqzmud7fw/coupon_validator.py", line 30, in <module>
+    main()
+  File "/tmp/tmpqzmud7fw/coupon_validator.py", line 16, in main
+    result = split_code(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpqzmud7fw/coupon_validator.py", line 2, in split_code
+    prefix, value = code.strip().upper().split('-')
+    ^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
